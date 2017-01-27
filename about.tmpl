@@ -1,0 +1,156 @@
+{{ template "header" . }}
+
+<div class="maincontents">
+
+<h1>About</h1>
+
+<p>
+  This site contains thousands of staticly generated manpages which have been
+  extracted from the packages of the different <a
+  href="https://www.debian.org/releases/">Debian releases</a>, and they
+  are updated periodically. Most users running a Debian system can just look at
+  the manpages of the programs they have installed using the <a
+  href="https://manpages.debian.org/stable/man">man</a> command. This service makes
+  it possible to access and browse through manual pages without the need to
+  install the program.
+
+<p>
+  This manual pages repository was generated
+  by <a href="https://github.com/Debian/debiman">debiman</a>. If you
+  have any feedback, please file an issue in
+  the <a href="https://github.com/Debian/debiman/issues">debiman issue
+  tracker</a>.
+</p>
+
+
+<p>
+  This repository exists thanks to the following individuals:
+</p>
+<dl>
+  <dt>Antoine Beaupré (<a href="https://wiki.debian.org/TheAnarcat">anarcat</a>)</dt>
+  <dd>
+    Antoine implemented debmans. Unaware of debmans, debiman was
+    started independently a few weeks after debmans. The two projects
+    validated each other in that they chose the same overall approach
+    and renderer. Ultimately, Antoine recommended we deploy debiman,
+    which at the time was more feature-complete.
+  </dd>
+
+  <dt>Javier Fernández-Sanguino (<a href="https://wiki.debian.org/JavierFernandezSanguino">jfs</a>)</dt>
+  <dd>
+    Javier is the long-time maintainer of manpages.debian.org and made
+    it possible that we deploy debiman, providing helpful feedback along the
+    way.
+  </dd>
+
+  <dt>Michael Stapelberg (<a href="https://people.debian.org/~stapelberg/">stapelberg</a>)</dt>
+  <dd>
+    Michael implemented debiman and liased with DSA to get this new service up
+    and running in January 2017.
+  </dd>
+
+  <dt>Lea Küchler</dt>
+  <dd>
+    Lea created the debiman logo and error page artwork.
+  </dd>
+
+  <dt>The <a href="http://mdocml.bsd.lv/">mandoc</a> developers</dt>
+  <dd>
+    debiman uses the mandoc UNIX manpage compiler toolset to convert
+    manpages to HTML. Without the impressive work of the mandoc
+    authors, we would not be able to serve manpage HTML versions that
+    are up to today’s quality standards.
+  </dd>
+
+  <dt><a href="https://dsa.debian.org/">Debian System Administrators (DSA)</a></dt>
+  <dd>
+    DSA is maintaining the machine which serves this repository.
+  </dd>
+
+  <dt><a href="https://www.bytemark.co.uk/">Bytemark Hosting</a></dt>
+  <dd>
+    Bytemark is providing hardware and hosting for the machine which
+    serves this repository.
+  </dd>
+</dl>
+
+<H1>Service history</H1>
+
+<p>This service has been running as an official Debian service since August 2007. 
+
+<p>The first beta of this service was setup by Frank Lichtenheld, in 2004,
+as a fix for <a href="http://bugs.debian.org/264589">Debian Bug #264589</a>. It 
+was setup as an un-official service (manpages.debian.net).</p>>
+
+<p>Following this beta, another beta instance of this service was setup and
+<a href="https://lists.debian.org/debian-doc/2007/08/msg00133.html">announced</a> by
+Javier Fernández-Sanguino in August 2007. This version used a Perl CGI script
+(man-cgi) derived from the interface used by <a
+href="http://www.freebsd.org/cgi/man.cgi">FreeBSD</a> and developed by Wolfram
+Schneider. It was first installed in the Spanish Debian official mirror (ftp.es.debian.org) and
+lacked internationalization support. The source code for the service was 
+made available <a href="http://anonscm.debian.org/viewvc/ddp/man-cgi/">SVN
+repository of the Debian Documentation Project</a> and was improved to
+provide internationalisation support.</p>
+
+<p>Following <a
+href="http://lists.debian.org/debian-doc/2009/06/msg00022.html">several
+issues</a> with the first server it was moved (in May 2010) to
+paganini.debian.org, still as an unofficial server.  When paganini.debian.org
+went down (in October 2013) it was moved to glinka.debian.org and was converted
+into an official service (see <a
+href="https://lists.debian.org/debian-doc/2013/10/msg00026.html">announcement</a>).</p>
+
+<p>The service run smoothly from then until 2016, when it suddenly saw a large
+demand increase, partially due to robots blidnlessly following links and
+hammering the server where the service was installed (apparently as a
+consequence of links in Apache unconfigured default sites
+introduced because of <a href="http://bugs.debian.org/821313">Debian Bug
+#821313</a>). The CGI script was modified several times between server downtimes
+at glinka.debian.org to try to fix this. Unfortunately, this was insufficient and
+the service was down from August 2016 to December 2016.<p>
+
+<p>Different Debian developers started working independently on alternatives to
+provide a more efficient service. Antoiné Beaupré built <a
+href="https://gitlab.com/anarcat/debmans">debmans</a> (using Python)
+and Michael Stapelberge built <a href="https://github.com/Debian/debiman">debiman</a> (using Golang).</p>
+
+<p>The service was restored, still using a CGI script, to manziarly.debian.org
+in December 2016. In January 2017, debiman was setup and the service was
+modified to a static repository, removing the dependency on the original
+script. It has been running as such since.</p>
+
+
+<H1>Other sources</H1>
+
+<p>There are other sources for manpages online which you can use
+as alternatives to this service. These include:</p>
+
+<ul>
+
+<li>Specific to some distributions or OS:</li>
+
+<ul>
+
+<li><a href="http://man.cx/">http://man.cx/</a> - provides the manpages of the 
+Debian <em>testing</em> distribution.
+<li><a href="http://manpages.ubuntu.com/">Ubuntu Manpage repository</a>.
+<li><a href="http://linuxmanpages.net/">Fedora Online Manpages repository</a>
+<li><a href="http://www.openbsd.org/cgi-bin/man.cgi">OpenBSD manual pages</a>.
+<li><a href="http://www.freebsd.org/cgi/man.cgi">FreeBSD manual pages</a>.
+</ul>
+
+<li>Generic interfaces:</li>
+
+<ul>
+<li><a href="http://linux.die.net/man/">http://linux.die.net/man/</a>.
+<li><a href="http://man.he.net/">Linux Man pages online</a>.
+<li><a href="http://www.unix.com/man-page/">The UNIX and Linux forum manpages</a>.
+</ul>
+</ul>
+
+
+
+</div>
+
+{{ template "footer" . }}

@@ -1,0 +1,29 @@
+{{ template "header" . }}
+
+<div class="maincontents" style="width: 100%">
+
+<img src="/404.svg" width="250" height="300" alt="Manpage not found" align="left">
+
+<h1>Manpage not found</h1>
+
+{{ if or (ne .BestChoice.Suite "") (eq .Manpage "index") }}
+<p>
+Sorry, I could not find the specific manpage version you requested! Possibly it is no longer in Debian?
+</p>
+{{ else }}
+<p>
+Sorry, the manpage “{{ .Manpage }}” was not found! Did you spell it correctly?
+</p>
+{{ end }}
+
+{{ if ne .BestChoice.Suite "" }}
+<p>
+Could I maybe offer you the manpage <a href="{{ .BestChoice.ServingPath }}">{{ .BestChoice.ServingPath }}</a> instead?
+</p>
+{{ end }}
+
+<p style="clear: both">
+
+</div>
+
+{{ template "footer" . }}
