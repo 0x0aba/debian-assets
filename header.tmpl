@@ -11,8 +11,32 @@
 <style type="text/css">
 {{ template "style" }}
 </style>
+<script type="text/javascript">
+if (!!document['fonts']) {
+        var r = "body{font-family:'Roboto',sans-serif;}";
+        var i = ".mandoc,.mandoc pre,.mandoc code,p.section{font-family:'Inconsolata',monospace;}";
+        var l = function(m) {
+                if (!document.body) {
+                        document.write("<style>"+m+"</style>");
+                } else {
+                        document.body.innerHTML+="<style>"+m+"</style>";
+                }
+        };
+        /* font loading API supported */
+        new FontFace('Roboto', "local('Roboto'), local('Roboto Regular'), local('Roboto-Regular'), url(/Roboto-Regular.woff2) format('woff2'), url(/Roboto-Regular.woff) format('woff')")
+                .load().then(function() { l(r); });
+        new FontFace('Inconsolata', "local('Inconsolata'), url(/Inconsolata.woff2) format('woff2'), url(/Inconsolata.woff) format('woff')")
+                .load().then(function() { l(i); });
+} else {
+        var l = document.createElement('link');
+        l.rel = 'preload';
+        l.href = '/fonts-woff.css';
+        l.as = 'style';
+        l.onload = function() { this.rel = 'stylesheet'; };
+        document.head.appendChild(l);
+}
+</script>
 <link rel="search" title="Debian manpages" type="application/opensearchdescription+xml" href="/opensearch.xml">
-<link rel="preload" href="/fonts-woff.css" as="style" onload="this.rel='stylesheet'">
 <noscript>
   <style type="text/css">
     body { font-family: 'Roboto', sans-serif; }
