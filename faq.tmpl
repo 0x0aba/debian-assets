@@ -4,10 +4,58 @@
 
 <h1>FAQ</h1>
 
+<h2 id="man-problems">Where to report problems in manpages?</h2>
+
 <p>
-There are no Frequently Asked Questions yet, please direct your questions to
-the <a href="https://lists.debian.org/debian-doc/">Debian Documentation Mailing
-List</a>.
+There are 3 different places where problems in manpage rendering might
+need to be reported:
+</p>
+
+<ul>
+<li>If the manpage renders correctly in some manpage viewers, but not
+  on <a href="https://manpages.debian.org">manpages.debian.org</a>,
+  this might likely be a limitation/bug
+  with <a href="http://mdocml.bsd.lv/">mdocml</a> (the renderer we
+  use). <a href="http://mdocml.bsd.lv/contact.html">Report at
+  mdocml</a>.</li>
+<li>If the manpage contains wrong content, and was added by the Debian
+  package maintainer, report at
+  the <a href="https://bugs.debian.org/">Debian bug tracker</a>.</li>
+<li>If the manpage contains wrong content and comes from the upstream
+  software, report at the upstream bug tracker. Follow
+  the <a href="https://tracker.debian.org/">Package tracker</a> link
+  on the given manpage to find out which package is responsible for
+  the manpage, and follow the "homepage" link. If there is no
+  homepage, file a bug against
+  the <a href="https://bugs.debian.org/">Debian bug tracker</a>.</li>
+</ul>
+
+<h2 id="debiman-problems">Where to report problems with the service?</h2>
+
+<p>
+  If the manpages are usually rendered correctly or you do not exactly
+  know where the problem is, it is possible the problem is
+  with <a href="https://github.com/Debian/debiman">debiman</a> itself,
+  in which case feel free to open
+  an <a href="https://github.com/Debian/debiman/issues">issue on
+  Github</a>.
+</p>
+
+<p>Note: the Github issue tracker is for software-specific issues. If
+  there are issues with the service (e.g. server not found or other
+  service issues), the bug should be reported against
+  the <a href="https://bugs.debian.org/manpages.debian.org">manpages.debian.org
+  pseudo-package</a>. (Currently unavailable,
+  see <a href="https://bugs.debian.org/851885">bug #851885</a>.)
+</p>
+
+<h2 id="other">Question not answered?</h2>
+
+<p>
+  If you have any more question that is not answered here, please
+  direct your questions to
+  the <a href="https://lists.debian.org/debian-doc/">Debian
+  Documentation Mailing List</a>.
 </p>
 
 </div>
