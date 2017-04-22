@@ -63,11 +63,20 @@ need to be reported:
   <a href="https://anonscm.debian.org/git/srv-manpages/debian-assets.git/">static
   assets repository</a>. Pushing to that repository requires access to
   the <code>srv-manpages</code> group, which is granted through a
-  request
-  on <a href="https://wiki.debian.org/rt.debian.org">rt.debian.org</a>. You
-  can also simply send a patch by email on
+  request on
+  the <a href="https://alioth.debian.org/projects/srv-manpages/">Alioth
+  project</a>. You can also simply send a patch by email on
   the <a href="https://lists.debian.org/debian-doc/">Debian
   Documentation Mailing List</a> if this is a one-off change.
+</p>
+
+<p>
+  Changes to the static assets are picked up by Debiman cron job,
+  which runs every 4 hours. Then the changes are propagated through a
+  Debian static mirror infrastructure, which adds an additional
+  delay. Changes to templates are not propagated until manpages
+  themselves are re-generated. A full regeneration run can be ran by
+  hand, but takes a few hours to complete.
 </p>
 
 <h2 id="deploy">Debiman looks great, how can I deploy it myself?</h2>
