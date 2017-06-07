@@ -89,10 +89,18 @@ need to be reported:
   Debian static mirror infrastructure, which adds an additional
   delay. Changes to templates are not propagated until manpages
   themselves are re-generated. A full regeneration run can be ran by
-  hand, but takes a few hours to complete. Further documentation on
-  how those changes are deployed is in
-  the <a href="https://wiki.debian.org/manpages.debian.org">Debian
-  wiki</a>.
+  hand, but takes a few hours to complete, with the following command
+  on <code>manziarly.debian.org</code>:
+
+  <pre>
+    sudo -u manpages \
+      /srv/manpages.debian.org/debiman/run-debiman.bash \
+      -force_rerender 2>&1 | tee ~/dm-full-rerender.log
+  </pre>
+
+  Note that you will need to set
+  a <a href="https://dsa.debian.org/user/sudo/">sudo password</a>
+  before you can run commands through sudo.
 </p>
 
 <h2 id="deploy">Debiman looks great, how can I deploy it myself?</h2>
