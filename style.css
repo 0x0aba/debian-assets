@@ -186,6 +186,10 @@ a:visited {
     font-size: 1.04rem;
 }
 
+.mandoc pre {
+    white-space: pre-wrap;
+}
+
 #footer {
 	border: 1px solid #dfdfe0;
 	border-left: 0;
